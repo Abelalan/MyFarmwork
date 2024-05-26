@@ -39,13 +39,13 @@ public class MessageModule : BaseGameModule
     private void LoadAllMessageHandlers()
     {
         globalMessageHandlers = new Dictionary<Type, List<object>>();
-        // etTypes()` 方法返回一个 `Type[]` 数组，其中包含程序集中定义的所有类型的实例
-        // `GetCallingAssembly()` 方法返回调用方的程序集。
+        // etTypes()方法返回一个 Type[] 数组，其中包含程序集中定义的所有类型的实例
+        // GetCallingAssembly() 方法返回调用方的程序集。
         foreach (var type in Assembly.GetCallingAssembly().GetTypes())
         {
             if (type.IsAbstract)
                 continue;
-
+            // 从type上获取MessageHandlerAttribute的自定义类型属性
             MessageHandlerAttribute messageHandlerAttribute = type.GetCustomAttribute<MessageHandlerAttribute>(true);
             if (messageHandlerAttribute != null)
             {
@@ -54,7 +54,7 @@ public class MessageModule : BaseGameModule
                 // 全局消息处理中不包含本类型
                 if (!globalMessageHandlers.ContainsKey(messageHandler.GetHandlerType()))
                 {
-                    // 将次添加进去
+                    // 将此添加进去
                     globalMessageHandlers.Add(messageHandler.GetHandlerType(), new List<object>());
                 }
 

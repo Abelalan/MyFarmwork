@@ -7,7 +7,14 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
-
+    /// <summary>
+    /// 流程组件
+    /// </summary>
+    [Module(3)]
+    public static ProcedureModule Procedure { get => TGameFramework.Instance.GetModule<ProcedureModule>(); }
+    /// <summary>
+    /// 模块组件
+    /// </summary>
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
@@ -30,15 +37,16 @@ public class GameManager : MonoBehaviour
 
         Application.logMessageReceived += OnReceiveLog;
         TGameFramework.Initialize();
+        // 初始化模块
         StartupModules();
         TGameFramework.Instance.InitModules();
 
     }
 
-    private void Start()
+    private async void Start()
     {
         TGameFramework.Instance.StartModules();
-        //Procedure.StartProcedure().Coroutine();
+        await Procedure.StartProcedure();
     }
 
     private void Update()
@@ -93,7 +101,7 @@ public class GameManager : MonoBehaviour
             // 这个方法的用途是检查两个类型之间的兼容性。如果一个类型可以从另一个类型进行赋值，表示它们之间存在兼容关系。这种兼容性关系通常是指继承关系，即派生类型可以赋值给基类型。
             // property.PropertyType获取该属性的数据类型
             if (!baseCompType.IsAssignableFrom(property.PropertyType))
-            // 如果属性的类型没有继承BaseGameModule,跳出本次循环
+                // 如果属性的类型没有继承BaseGameModule,跳出本次循环
                 continue;
 
             // 用于从一个属性（property）中获取应用于该属性的特定自定义特性（attribute）
@@ -102,6 +110,7 @@ public class GameManager : MonoBehaviour
             // inherit: 一个布尔值，指定是否也搜索继承链以查找这些特性。false表示不搜索继承链。
             // object[] attrs: 返回一个object数组，其中包含了所有应用于property的ModuleAttribute实例。
             object[] attrs = property.GetCustomAttributes(typeof(ModuleAttribute), false);
+            Debug.Log(attrs.Length);
             Debug.Log(attrs[0]);
             // 应用于property的ModuleAttribute实例。
             if (attrs.Length == 0)
