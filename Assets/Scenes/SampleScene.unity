@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proceduresNames:
-  - BaseProcedure
   - InitProcedure
   defaultProcedureName: InitProcedure
 --- !u!1 &1291153059

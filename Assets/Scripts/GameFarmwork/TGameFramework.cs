@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public sealed class TGameFramework
 {
+    // 
     public static TGameFramework Instance { get; private set; }
+    // 初始化标记
     public static bool Initialized { get; private set; }
     //private List<BaseGameModule> s_modules;
     private Dictionary<Type, BaseGameModule> m_modules = new Dictionary<Type, BaseGameModule>();
@@ -33,51 +35,6 @@ public sealed class TGameFramework
         }
         m_modules.Add(moduleType, module);
     }
-
-    //        private IEnumerator Start()
-    //        {
-    //            if (Instance != null)
-    //            {
-    //                gameObject.SetActive(false);
-    //                yield break;
-    //                //return;
-    //
-    //            UnityLog.Info("===游戏启动===");
-    //            Instance = this;
-    //            DontDestroyOnLoad(gameObject);
-    //            UnityLog.Info("===>加载配置");
-    //#if UNITY_EDITOR
-    //            string path = "Assets/Datas/Config";
-    //            ConfigManager.LoadAllConfigsByFile(path);
-    //            //yield return ConfigManager.LoadAllConfigsByFile(path);
-    //#else
-    //            string path = $"{Application.streamingAssetsPath}/AssetBundles";
-    //            string subFolder = $"Datas/Config";
-    //            //ConfigManager.LoadAllConfigsByBundle(path, subFolder);
-    //            yield return ConfigManager.LoadAllConfigsByBundle(path, subFolder);
-    //#endif
-    //            GlobalConfig.InitGlobalConfig();
-    //            BuffConfig.ParseConfig();
-    //            SkillConfig.ParseConfig();
-    //            SkillRuneConfig.ParseConfig();
-    //            BulletConfig.ParseConfig();
-    //            SpellFieldConfig.ParseConfig();
-    //            LevelConfig.ParseConfig();
-    //            WeaponConfig.ParseConfig();
-    //            DialogConfig.ParseConfig();
-    //            BlessingConfig.ParseConfig();
-    //            SpawnMonsterConfig.ParseConfig();
-    //            I18NConfig.ParseConfig();
-    //            GameEffectHandler.RegisterHandlers();
-    //            UnityLog.Info("<===配置加载完毕");
-    //
-    //            UnityLog.Info("===>初始化模块组件");
-    //            Instance.InitModules();
-    //            UnityLog.Info("<===模块组件初始化完毕");
-    //            UnityLog.Info("===>启动模块组件");
-    //            Instance.StartModules();
-    //            UnityLog.Info("<===模块组件已就绪");
-    //        }
 
     public void Update()
     {

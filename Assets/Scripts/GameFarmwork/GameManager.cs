@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
+    
     private bool activing;
     private void Awake()
     {
@@ -128,7 +129,7 @@ public class GameManager : MonoBehaviour
 
             moduleAttrs.Add(moduleAttr);
         }
-
+        // ÅÅÐò
         moduleAttrs.Sort((a, b) =>
         {
             return a.Priority - b.Priority;
