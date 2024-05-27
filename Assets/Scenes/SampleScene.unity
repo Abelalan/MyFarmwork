@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proceduresNames:
-  - InitProcedure
   - BaseProcedure
+  - InitProcedure
   defaultProcedureName: InitProcedure
 --- !u!1 &1291153059
 GameObject:

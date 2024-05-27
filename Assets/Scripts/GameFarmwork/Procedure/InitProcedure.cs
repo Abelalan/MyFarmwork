@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -10,7 +10,7 @@ public class InitProcedure : BaseProcedure
 
         await base.OnEnterProcedure(value);
 
-        Debug.Log("�л�Ϊ��ʼ��״̬");
+        Debug.Log("切换为初始化状态");
 
         await Task.Yield();
 

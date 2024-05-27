@@ -7,7 +7,7 @@ using UnityEngine;
 /// 游戏流程基类
 /// BaseProcedure类是一种状态或流程管理系统。它定义了一个基本的状态或流程类，并提供了一些方法来处理状态的转换和进入/离开状态的行为。
 /// </summary>
-public class BaseProcedure
+public abstract class BaseProcedure
 {
     /// <summary>
     /// 改变流程
@@ -34,6 +34,7 @@ public class BaseProcedure
     /// <returns></returns>
     public virtual async Task OnLeaveProcedure()
     {
+
         await Task.Yield();
     }
 }
