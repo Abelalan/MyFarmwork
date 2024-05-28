@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 消息类型
+/// </summary>
 public class MessageType : MonoBehaviour
 {
     public struct Test
