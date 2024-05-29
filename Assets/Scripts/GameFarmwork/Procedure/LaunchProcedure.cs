@@ -33,7 +33,7 @@ public class LaunchProcedure : BaseProcedure
         //            string subFolder = $"Datas/Config";
         //            await ConfigManager.LoadAllConfigsByBundle(path, subFolder);
         //#endif
-        //GlobalConfig.InitGlobalConfig();
+        GlobalConfig.InitGlobalConfig();
         BuffConfig.ParseConfig();
         SkillConfig.ParseConfig();
         BulletConfig.ParseConfig();

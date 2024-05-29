@@ -10,7 +10,7 @@ public class LoginMessageHandler : MessageHandler<MessageType.Login>
     {
         UnityLog.Info("´ò¿ªLoinÃæ°å");
 
-
+        await Task.Yield();
         
     }
 }
