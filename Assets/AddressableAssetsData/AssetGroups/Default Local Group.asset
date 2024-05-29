@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 071a87fe2f33ae9488cfaa58cba185ac
+  m_SerializeEntries:
+  - m_GUID: 34c542b282fce9d43b9ee2daa9b96cee
+    m_Address: Assets/BundleAssets/Prefab/GameManager.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d847be99ba49194c9a3fa427e34e322
+    m_Address: Assets/BundleAssets/UI/LoginUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 598be73c79fec4440be7ae8ec2e1ef35
+    m_Address: Assets/BundleAssets/Config/GlobalConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0a50a7bb6d1a2145afa95218274bea2
+    m_Address: Assets/BundleAssets/Config/AttributeMapConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9815fae6d690714f9f56ff4ab882777
+    m_Address: Assets/BundleAssets/Config/AudioConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e1f0f00347387441aff20fb6518a90e
+    m_Address: Assets/BundleAssets/Config/BuffConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19151e10547046c48b61c2ea49736f96
+    m_Address: Assets/BundleAssets/Config/BulletConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a7321e340fd85249b00dab59d058db5
+    m_Address: Assets/BundleAssets/Config/CharacterConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a49160fc3d9a1774b869402691108c26
+    m_Address: Assets/BundleAssets/Config/CombatFormulaConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bba2f5da96f3694e93568bc07472931
+    m_Address: Assets/BundleAssets/Config/DropRewardGroupConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4395a6465b7fbf42815138aa0321aeb
+    m_Address: Assets/BundleAssets/Config/DungeonConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d87b27b1203d1634a99a14dbfdadbb93
+    m_Address: Assets/BundleAssets/Config/DungeonMapConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24972ae69761e9148a4bebd10b8faf13
+    m_Address: Assets/BundleAssets/Config/EquipmentBasePropertyConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72806426bb8187b4cb1baa656dbac0d8
+    m_Address: Assets/BundleAssets/Config/EquipmentQualityConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 338d77be736c54b4fb15deceec7eaa8d
+    m_Address: Assets/BundleAssets/Config/EquipmentRandomAttributeConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fb3f93d3ce792741951307b1d536c6a
+    m_Address: Assets/BundleAssets/Config/ExperienceGrowthConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c259bcd81bf57f478f2495c577581c5
+    m_Address: Assets/BundleAssets/Config/FXConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a418f65b5d409940831831034e8ceb4
+    m_Address: Assets/BundleAssets/Config/I18NConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7555938ac7aab3d4a89286c13201ba83
+    m_Address: Assets/BundleAssets/Config/InterruptStackActionConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beb64fc5f846f2d48902012ad4cb6a6a
+    m_Address: Assets/BundleAssets/Config/PlayerConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fb4e27bf2b1a1041a27627263d6c060
+    m_Address: Assets/BundleAssets/Config/PropConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b95644d536e7c6e49bc64418f489ea43
+    m_Address: Assets/BundleAssets/Config/RandomAttributeGroupConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e52d99646075f94595d16ee9bbc2195
+    m_Address: Assets/BundleAssets/Config/ShopConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cedea3005ac35df4cba314c2795ba74c
+    m_Address: Assets/BundleAssets/Config/SkillCDConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06409dcea29eb8f4186e5072629a39ab
+    m_Address: Assets/BundleAssets/Config/SkillConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed4751530468e354fb520caa3ace1779
+    m_Address: Assets/BundleAssets/Config/SpellFieldConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c19f7b7117695c489c64866be64367c
+    m_Address: Assets/BundleAssets/Config/SpriteConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63d630a05ecb1e34f88b0b71291d5bd3
+    m_Address: Assets/BundleAssets/Config/StrengthenConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b4a163095b7b44499f34b7d5c1d3eee
+    m_Address: Assets/BundleAssets/Config/UIConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 64c1a7e1f2e532d47941024490d34a88, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ddc97968f78cf784ea3e3b7b7cba3b19, type: 2}
+    - {fileID: 11400000, guid: e1206d066e4da684594587a41997a8ec, type: 2}

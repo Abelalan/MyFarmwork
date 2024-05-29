@@ -7,18 +7,32 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
+
+    /// <summary>
+    /// 资源组件
+    /// </summary>
+    [Module(1)]
+    public static AssetModule Asset { get => TGameFramework.Instance.GetModule<AssetModule>(); }
     /// <summary>
     /// 流程组件
     /// </summary>
-    [Module(3)]
+    [Module(2)]
     public static ProcedureModule Procedure { get => TGameFramework.Instance.GetModule<ProcedureModule>(); }
+    /// <summary>
+    /// UI组件
+    /// </summary>
+    [Module(3)]
+    public static UIModule UI { get => TGameFramework.Instance.GetModule<UIModule>(); }
     /// <summary>
     /// 模块组件
     /// </summary>
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
-    
+    [Module(7)]
+    public static ECSModule ECS { get => TGameFramework.Instance.GetModule<ECSModule>(); }
+
+
     private bool activing;
     private void Awake()
     {
