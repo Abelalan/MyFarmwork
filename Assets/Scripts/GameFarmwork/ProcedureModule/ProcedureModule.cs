@@ -162,7 +162,7 @@ public class ProcedureModule : BaseGameModule
         changeProcedureRequest.Value = value;
         // 添加进队列
         changeProcedureQ.Enqueue(changeProcedureRequest);
-        // 没有正在
+        
         if (!IsChangingProcedure)
         {
             await ChangeProcedureInternal();

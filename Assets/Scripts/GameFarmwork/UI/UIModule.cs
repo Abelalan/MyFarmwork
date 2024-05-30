@@ -273,9 +273,11 @@ public partial class UIModule : BaseGameModule
     {
         // 通过UIViewID获取对应的中介对象。
         UIMediator mediator = GetOpeningUIMediator(id);
+
         // 如果获取的中介对象为空，直接返回，不执行后续操作。
         if (mediator == null)
             return;
+
         // 获取当前中介模式（UIMode）下的最高排序顺序。
         int topSortingOrder = GetTopMediatorSortingOrder(mediator.UIMode);
         // 如果当前中介对象的排序顺序已经是最高，则不需要调整，直接返回。
@@ -299,7 +301,7 @@ public partial class UIModule : BaseGameModule
         }
     }
     /// <summary>
-    /// 判断UI是否是打开的
+    /// 判断UI是否是打开的，打开一个单例的UI时进行判断
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
@@ -352,15 +354,26 @@ public partial class UIModule : BaseGameModule
 
         return OnUIObjectLoaded(mediator, uiConfig, uiObject, arg);
     }
-
+    /// <summary>
+    /// 异步打开一个单例UI
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="arg"></param>
+    /// <returns></returns>
     public IEnumerator OpenUISingleAsync(UIViewID id, object arg = null)
     {
+        // 如果这个面板没有在打开状态，进行下一步操作
         if (!IsUIOpened(id))
         {
             yield return OpenUIAsync(id, arg);
         }
     }
-
+    /// <summary>
+    /// 异步打开
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="arg"></param>
+    /// <returns></returns>
     public IEnumerator OpenUIAsync(UIViewID id, object arg = null)
     {
         UIConfig uiConfig = UIConfig.ByID((int)id);
@@ -375,17 +388,27 @@ public partial class UIModule : BaseGameModule
         uiObjectPool.LoadGameObjectAsync(uiConfig.Asset, (asset) =>
         {
             GameObject uiObject = asset.gameObject;
+
             OnUIObjectLoaded(mediator, uiConfig, uiObject, arg);
+
             loadFinish = true;
+
         }, (obj) =>
         {
+            // 获取面板
             UIView newView = obj.GetComponent<UIView>();
+            // 初始化中介
             mediator.InitMediator(newView);
         });
+        // 等待加载完成 while 循环每一帧都检查 loadFinish 的值：
+        // 如果 loadFinish 是 false，则 yield return null 暂停协程，等待下一帧。
+        // 如果 loadFinish 是 true，则跳出循环，继续执行后续代码。
         while (!loadFinish)
         {
+            // 非阻塞性: yield return null 暂停协程直到下一帧，不会阻塞主线程。这种非阻塞行为是协程的核心特性之一，确保主线程可以继续处理其他任务
             yield return null;
         }
+        // 两次 yield return null 确保协程完全执行完毕并返回控制权。
         yield return null;
         yield return null;
     }
@@ -412,6 +435,7 @@ public partial class UIModule : BaseGameModule
         {
             UnityLog.Error($"UI Prefab不包含UIView脚本:{uiConfig.Asset}");
             RecycleMediator(mediator);
+
             uiObjectPool.UnloadGameObject(view.gameObject);
             return null;
         }
@@ -419,22 +443,28 @@ public partial class UIModule : BaseGameModule
         mediator.UIMode = uiConfig.Mode;
         int sortingOrder = GetTopMediatorSortingOrder(uiConfig.Mode) + 10;
 
+        // Debug.Log(sortingOrder);
         usingMediators.Add(mediator);
 
-        // 获取Canvas组件，并将其渲染模式设置为ScreenSpaceCamera。注释掉的代码可能需要设置UI相机。
+        // 获取Canvas组件，并将其渲染模式设置为ScreenSpaceCamera。注释掉的代码需要设置UI相机。
         Canvas canvas = uiObject.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
 
         // 根据UIMode，将UI对象设置到不同的根节点，并设置Canvas的排序层。
         //canvas.worldCamera = GameManager.Camera.uiCamera;
+
         if (uiConfig.Mode == UIMode.Normal)
         {
+            // 设置父对象
             uiObject.transform.SetParentAndResetAll(normalUIRoot);
+            // 设置排序层名称
             canvas.sortingLayerName = "NormalUI";
         }
         else
         {
+            // 设置父对象
             uiObject.transform.SetParentAndResetAll(modalUIRoot);
+            // 设置排序层名称
             canvas.sortingLayerName = "ModalUI";
         }
         // 设置中介对象和Canvas的排序顺序，
@@ -557,3 +587,5 @@ sealed class UIViewAttribute : Attribute
         MediatorType = mediatorType;
     }
 }
+
+

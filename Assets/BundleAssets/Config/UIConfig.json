@@ -34,5 +34,18 @@
     "Description": "TaskUI",
     "Asset": "Assets/BundleAssets/UI/TaskUI.prefab",
     "Mode": 0
+  },
+  {
+    "ID": 7,
+    "Description": "MainPanelUI",
+    "Asset": "Assets/BundleAssets/UI/MainPanelUI.prefab",
+    "Mode": 0
+  },
+  {
+    "ID": 8,
+    "Description": "BagUI",
+    "Asset": "Assets/BundleAssets/UI/BagUI.prefab",
+    "Mode": 0
   }
+
 ]

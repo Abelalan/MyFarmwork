@@ -2,11 +2,6 @@ using System;
 
 namespace UnityEngine
 {
-    /// <summary>
-    /// 作者: Teddy
-    /// 时间: 2018/03/21
-    /// 功能: 
-    /// </summary>
 	public static class TransformExt
     {
         /// <summary>
@@ -38,11 +33,17 @@ namespace UnityEngine
         public static Component FindChild(this Transform transform, Type type, string name, int index)
         {
             int currentIndex = 0;
+            // 获取指定类型 type 的所有子对象组件，包括未激活的（true 表示包括未激活的子对象）。
             Component[] components = transform.GetComponentsInChildren(type, true);
+            // 遍历 components 数组中的每一个组件。
             for (int i = 0; i < components.Length; i++)
             {
+                // 检查组件的名称是否与传入的 name 参数匹配，或者 name 参数为通配符 "*"，表示匹配所有名称。
                 if (components[i].name == name || name == "*")
                 {
+                    // 如果当前组件的索引 currentIndex 与传入的 index 参数匹配，则返回当前组件。
+                    // 同时，currentIndex + 1 ，表示找到了一个符合条件的组件。
+                    // index与当前的索引不相同时，currentIndex依旧自增
                     if (index == currentIndex++)
                     {
                         return components[i];

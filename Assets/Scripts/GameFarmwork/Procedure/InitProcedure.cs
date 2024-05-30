@@ -18,7 +18,7 @@ public class InitProcedure : BaseProcedure
         ///链接登录服务器
         //await GameManager.Net.ConnectLoginServer();
 
-        await GameManager.UI.OpenUIAsync(UIViewID.LoginUI);
+        await GameManager.UI.OpenUIAsync(UIViewID.MainPanelUI);
         //GameManager.Audio.PlayBGM(1);
         await Task.Yield();
 

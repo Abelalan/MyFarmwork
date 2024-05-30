@@ -162,6 +162,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd3d3095556ad1a49842918b59afe7ca
+    m_Address: Assets/BundleAssets/UI/MainPanelUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92d11cf0860574d44beaabeab7b319a4
+    m_Address: Assets/BundleAssets/UI/BagUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 64c1a7e1f2e532d47941024490d34a88, type: 2}
   m_SchemaSet:

@@ -6,6 +6,8 @@ public enum UIViewID
     BattleUI = 3,
     LoadingUI = 4,
     KnapsackUI = 5,
-    TaskUI = 6
+    TaskUI = 6,
+    MainPanelUI = 7,
+    BagUI = 8
 }
 
