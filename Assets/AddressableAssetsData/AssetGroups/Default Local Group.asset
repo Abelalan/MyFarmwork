@@ -172,6 +172,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdeadfbe97abeac4aadef8c7b780c302
+    m_Address: Assets/Scenes/mirror_1000.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 64c1a7e1f2e532d47941024490d34a88, type: 2}
   m_SchemaSet:

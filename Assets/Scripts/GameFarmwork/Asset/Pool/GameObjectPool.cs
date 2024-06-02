@@ -39,7 +39,7 @@ public class GameObjectPool<T> where T : GameObjectPoolAsset
         // 如果队列为空
         if (q.Count == 0)
         {
-            // 从资源路径加载对象
+            // 从资源路径加载对象，调用WaitForCompletion（），必须等待加载完成，此时为同步的方法
             GameObject prefab = Addressables.LoadAssetAsync<GameObject>(path).WaitForCompletion();
             // 实例化一个对象
             GameObject go = UnityEngine.Object.Instantiate(prefab);

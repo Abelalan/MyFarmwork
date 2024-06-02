@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public partial class UIModule : BaseGameModule
 {
+   
     // 打开UI的根节点
     public Transform normalUIRoot;
 
@@ -63,7 +64,7 @@ public partial class UIModule : BaseGameModule
     /// <summary>
     /// 缓存UIViewID 与 UIMediator 、 UIView 的映射信息
     /// 将每个UIView类型与其对应的Mediator和Asset进行关联
-    /// 这个方法遍历所有继承自UIView的类型，查找并处理它们的自定义属性，将其信息存储在两个字典中
+    /// 方法遍历所有继承自UIView的类型，查找并处理它们的自定义属性，将其信息存储在两个字典中
     /// </summary>
     private static void CacheUIMapping()
     {
@@ -139,7 +140,7 @@ public partial class UIModule : BaseGameModule
         //GameManager.Input.SetEnable(true);
     }
     /// <summary>
-    /// 获取排序顺序
+    /// 获取本类型UI面板SortingOrder的最大值
     /// </summary>
     /// <param name="mode"></param>
     /// <returns></returns>
@@ -385,6 +386,7 @@ public partial class UIModule : BaseGameModule
             yield break;
 
         bool loadFinish = false;
+
         uiObjectPool.LoadGameObjectAsync(uiConfig.Asset, (asset) =>
         {
             GameObject uiObject = asset.gameObject;
@@ -586,6 +588,10 @@ sealed class UIViewAttribute : Attribute
         ID = id;
         MediatorType = mediatorType;
     }
+
+    
 }
+
+
 
 

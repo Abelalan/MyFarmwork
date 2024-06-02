@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
             // inherit: 一个布尔值，指定是否也搜索继承链以查找这些特性。false表示不搜索继承链。
             // object[] attrs: 返回一个object数组，其中包含了所有应用于property的ModuleAttribute实例。
             object[] attrs = property.GetCustomAttributes(typeof(ModuleAttribute), false);
-            Debug.Log(attrs.Length);
-            Debug.Log(attrs[0]);
+            // Debug.Log(attrs.Length);
+            // Debug.Log(attrs[0]);
             // 应用于property的ModuleAttribute实例。
             if (attrs.Length == 0)
                 continue;
