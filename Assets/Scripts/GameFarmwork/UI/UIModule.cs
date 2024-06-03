@@ -85,6 +85,7 @@ public partial class UIModule : BaseGameModule
             if (type.IsAbstract)
                 // 跳过抽象类型，因为不能被实例化
                 continue;
+
             // IsAssignableFrom 用于检查type是否继承自 UIView
             if (baseViewType.IsAssignableFrom(type))
             {
